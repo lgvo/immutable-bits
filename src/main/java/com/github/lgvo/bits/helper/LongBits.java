@@ -17,4 +17,13 @@ public final class LongBits {
         return value;
     }
 
+    public static long fromByteArrayRange(final byte[] arr, final int init, final int end) {
+        long value = 0;
+        for (int x = init; x < end; x++) {
+            value = value << 8;
+            value += (int) arr[x] & 0xff;
+        }
+        return value;
+    }
+
 }
